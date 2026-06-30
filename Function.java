@@ -53,7 +53,65 @@ public class Function
                 break;
             }
             case 3:
+            {
+                if (taskList.isEmpty())
+                {
+                    System.out.println("No tasks to complete.");
+                }
+                else
+                {
+                    System.out.println("Which would you like to complete? ");
+                    for (int i = 0; i < taskList.size(); i++) 
+                    {
+                        System.out.println((i + 1) + ". " + taskList.get(i));
+                    }
+                    choiceLine = input.nextLine();
+                    int choice;
+                    try {
+                        choice = Integer.parseInt(choiceLine.trim());
+                    } catch (NumberFormatException e) {
+                        System.out.println("Invalid choice! Please enter a number.");
+                        continue;
+                    }
+                    if (choice < 1 || choice > taskList.size()) {
+                        System.out.println("Invalid task number.");
+                    } else {
+                        taskList.get(choice - 1).completeTask();
+                        System.out.println("Completed Task");
+                    }
+                }
+                break;
+            }
             case 4:
+                {
+                     if (taskList.isEmpty())
+                    {
+                        System.out.println("No tasks to Delete.");
+                    }
+                    else
+                    {
+                        System.out.println("Which would you like to Delete? ");
+                        for (int i = 0; i < taskList.size(); i++) 
+                        {
+                            System.out.println((i + 1) + ". " + taskList.get(i));
+                        }
+                        choiceLine = input.nextLine();
+                        int choice;
+                        try {
+                            choice = Integer.parseInt(choiceLine.trim());
+                        } catch (NumberFormatException e) {
+                            System.out.println("Invalid choice! Please enter a number.");
+                            continue;
+                        }
+                        if (choice < 1 || choice > taskList.size()) {
+                            System.out.println("Invalid task number.");
+                        } else {
+                            taskList.remove(choice - 1);
+                            System.out.println("Deleted Task");
+                        }
+                    }
+                    break;
+                }
             case 5:
             {
                 System.out.println("Exiting now. Goodbye!");
