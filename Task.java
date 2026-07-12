@@ -1,3 +1,7 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
 public class Task
 {
     String taskName;
@@ -14,6 +18,21 @@ public class Task
         } else
         {
             this.taskName = "[X] " + Name;
+        }
+    }
+
+    public static void saveTask(ArrayList<Task> list)
+    {
+        try(FileWriter writer = new FileWriter("task.txt"))
+        {
+            for(Task task : list)
+            {
+                writer.write(task.toString() + "\n");
+            }
+        }
+        catch(IOException e)
+        {
+            System.out.println("Couldnt write file");
         }
     }
 

@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -7,6 +11,29 @@ public class Function
     public void Run() 
     {
         ArrayList<Task> taskList = new ArrayList<Task>();
+        try(BufferedReader reader = new BufferedReader(new FileReader("task.txt")))
+        {
+            String line;
+            while((line = reader.readLine()) != null)
+            {
+                if(line.substring(0, 2).equals("[X]"))
+                {
+                    taskList.add(new Task(line.substring(4), true));
+                }
+                else
+                {
+                    taskList.add(new Task(line.substring(4), false));
+                }
+            }
+        }
+        catch(FileNotFoundException a)
+        {
+            System.out.println("Cannot find file.");
+        }
+        catch (IOException a)
+        {
+            System.out.println("Something went wrong.");
+        }
         Scanner input = new Scanner(System.in);
         while(running)
         {
@@ -35,6 +62,7 @@ public class Function
                 System.out.println("Task to add: ");
                 String option = input.nextLine();
                 taskList.add(new Task(option, false));
+                Task.saveTask(taskList);
                 System.out.println("Task Added!");
                 break;
             }
@@ -77,6 +105,7 @@ public class Function
                         System.out.println("Invalid task number.");
                     } else {
                         taskList.get(choice - 1).completeTask();
+                        Task.saveTask(taskList);
                         System.out.println("Completed Task");
                     }
                 }
@@ -107,6 +136,7 @@ public class Function
                             System.out.println("Invalid task number.");
                         } else {
                             taskList.remove(choice - 1);
+                            Task.saveTask(taskList);
                             System.out.println("Deleted Task");
                         }
                     }
