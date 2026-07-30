@@ -16,7 +16,7 @@ public class Function
             String line;
             while((line = reader.readLine()) != null)
             {
-                if(line.substring(0, 2).equals("[X]"))
+                if(line.substring(0, 3).equals("[X]"))
                 {
                     taskList.add(new Task(line.substring(4), true));
                 }
