@@ -16,7 +16,7 @@ public class DatabaseManager
     {
         String sql = "CREATE TABLE IF NOT EXISTS tasks (" +
                      "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                     "taskName TEXT NOT NULL," +
+                     "task_name TEXT NOT NULL," +
                      "completed INTEGER NOT NULL)";
         
         try(Connection conn = DriverManager.getConnection(URL);
