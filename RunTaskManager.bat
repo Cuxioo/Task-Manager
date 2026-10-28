@@ -2,17 +2,16 @@
 setlocal
 cd /d "%~dp0"
 
-if not exist "build\classes" mkdir "build\classes"
-
-javac -cp "lib/*" -d "build\classes" "src\Main.java" "src\DatabaseManager.java" "src\Task.java"
+where mvn >nul 2>nul
 if errorlevel 1 (
     echo.
-    echo Failed to compile Task Manager.
+    echo Maven is required to run the JavaFX app.
+    echo Install Apache Maven and ensure "mvn" is on your PATH.
     pause
     exit /b 1
 )
 
-java -cp "build\classes;lib/*" src.Main
+mvn javafx:run
 set "exitCode=%ERRORLEVEL%"
 pause
 exit /b %exitCode%

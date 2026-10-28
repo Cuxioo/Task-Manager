@@ -1,0 +1,171 @@
+.app-root {
+    -fx-background-color: #101012;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.header {
+    -fx-background-color: #171719;
+    -fx-padding: 28 40 27 40;
+    -fx-border-color: transparent transparent #29292d transparent;
+}
+
+.eyebrow {
+    -fx-text-fill: #f1535b;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+}
+
+.app-title {
+    -fx-text-fill: #f5f5f6;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+.subtitle, .section-hint {
+    -fx-text-fill: #96969e;
+    -fx-font-size: 13px;
+}
+
+.stat-card {
+    -fx-background-color: #202023;
+    -fx-background-radius: 8px;
+    -fx-padding: 11 15 10 15;
+    -fx-border-color: #303035;
+    -fx-border-radius: 8px;
+}
+
+.stat-caption {
+    -fx-text-fill: #92929a;
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+}
+
+.stat-value {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 21px;
+    -fx-font-weight: bold;
+}
+
+.task-content {
+    -fx-background-color: #101012;
+}
+
+.section-title {
+    -fx-text-fill: #f3f3f4;
+    -fx-font-size: 21px;
+    -fx-font-weight: bold;
+}
+
+.task-input {
+    -fx-background-color: #1b1b1e;
+    -fx-background-radius: 7px;
+    -fx-border-color: #36363b;
+    -fx-border-radius: 7px;
+    -fx-text-fill: #f5f5f6;
+    -fx-prompt-text-fill: #777780;
+    -fx-padding: 12 14 12 14;
+    -fx-font-size: 13px;
+}
+
+.task-input:focused {
+    -fx-border-color: #e0444d;
+}
+
+.primary-button {
+    -fx-background-color: #d9343e;
+    -fx-background-radius: 7px;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 12 17 12 17;
+    -fx-cursor: hand;
+}
+
+.primary-button:hover {
+    -fx-background-color: #ed4650;
+}
+
+.filter-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 6px;
+    -fx-text-fill: #a5a5ad;
+    -fx-padding: 8 13 8 13;
+    -fx-cursor: hand;
+}
+
+.filter-button:selected {
+    -fx-background-color: #3b2023;
+    -fx-text-fill: #ff737a;
+}
+
+.list-view {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-padding: 4 0 4 0;
+}
+
+.list-view .list-cell:empty {
+    -fx-padding: 0;
+}
+
+.task-row {
+    -fx-background-color: #1a1a1d;
+    -fx-background-radius: 8px;
+    -fx-border-color: #2d2d32;
+    -fx-border-radius: 8px;
+    -fx-padding: 13 14 13 14;
+}
+
+.task-description {
+    -fx-text-fill: #eeeeef;
+    -fx-font-size: 13px;
+}
+
+.task-completed {
+    -fx-text-fill: #777780;
+    -fx-strikethrough: true;
+}
+
+.check-box .box {
+    -fx-background-color: #171719;
+    -fx-border-color: #5a5a62;
+    -fx-border-radius: 4px;
+}
+
+.check-box:selected .box {
+    -fx-background-color: #d9343e;
+    -fx-border-color: #d9343e;
+}
+
+.delete-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #888890;
+    -fx-font-size: 21px;
+    -fx-padding: 0 7 2 7;
+    -fx-cursor: hand;
+}
+
+.delete-button:hover {
+    -fx-text-fill: #ff626b;
+}
+
+.list-view .placeholder {
+    -fx-text-fill: #85858d;
+}
+
+.footer {
+    -fx-background-color: #171719;
+    -fx-padding: 13 40 13 40;
+    -fx-border-color: #29292d transparent transparent transparent;
+}
+
+.footer-label {
+    -fx-text-fill: #74747c;
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+}

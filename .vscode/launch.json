@@ -1,0 +1,17 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run Task Manager (JavaFX)",
+            "request": "launch",
+            "mainClass": "Main",
+            "preLaunchTask": "Build Task Manager",
+            "classPaths": [
+                "${workspaceFolder}/target/classes",
+                "${workspaceFolder}/lib/sqlite-jdbc-3.42.0.0.jar"
+            ],
+            "vmArgs": "--module-path \"${userHome}/.m2/repository/org/openjfx/javafx-base/26.0.1/javafx-base-26.0.1.jar;${userHome}/.m2/repository/org/openjfx/javafx-base/26.0.1/javafx-base-26.0.1-win.jar;${userHome}/.m2/repository/org/openjfx/javafx-graphics/26.0.1/javafx-graphics-26.0.1.jar;${userHome}/.m2/repository/org/openjfx/javafx-graphics/26.0.1/javafx-graphics-26.0.1-win.jar;${userHome}/.m2/repository/org/openjfx/javafx-controls/26.0.1/javafx-controls-26.0.1.jar;${userHome}/.m2/repository/org/openjfx/javafx-controls/26.0.1/javafx-controls-26.0.1-win.jar\" --add-modules javafx.controls"
+        }
+    ]
+}

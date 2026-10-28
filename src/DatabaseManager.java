@@ -1,5 +1,3 @@
-package src;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +26,11 @@ public class DatabaseManager
 
         if (!folder.exists())
         {
-            folder.mkdirs();
+            if (!folder.mkdirs() && !folder.isDirectory())
+            {
+                throw new IllegalStateException(
+                        "Could not create database folder: " + folder.getAbsolutePath());
+            }
         }
     }
 
@@ -46,7 +48,7 @@ public class DatabaseManager
         }
         catch (SQLException e)
         {
-            System.err.println("Error initializing Database: " + e.getMessage());
+            throw new IllegalStateException("Error initializing database: " + e.getMessage(), e);
         }
     }
 
@@ -63,7 +65,7 @@ public class DatabaseManager
         }
         catch (SQLException e)
         {
-            System.err.println("Error adding task: " + e.getMessage());
+            throw new IllegalStateException("Error adding task: " + e.getMessage(), e);
         }
     }
 
@@ -88,7 +90,7 @@ public class DatabaseManager
         }
         catch (SQLException e)
         {
-            System.err.println("Error fetching tasks: " + e.getMessage());
+            throw new IllegalStateException("Error fetching tasks: " + e.getMessage(), e);
         }
 
         return tasks;
@@ -107,7 +109,7 @@ public class DatabaseManager
         }
         catch (SQLException e)
         {
-            System.err.println("Error updating task: " + e.getMessage());
+            throw new IllegalStateException("Error updating task: " + e.getMessage(), e);
         }
     }
 
@@ -123,7 +125,7 @@ public class DatabaseManager
         }
         catch (SQLException e)
         {
-            System.err.println("Error deleting task: " + e.getMessage());
+            throw new IllegalStateException("Error deleting task: " + e.getMessage(), e);
         }
     }
 }
